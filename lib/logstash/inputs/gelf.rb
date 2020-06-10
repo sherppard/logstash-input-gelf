@@ -264,6 +264,7 @@ class LogStash::Inputs::Gelf < LogStash::Inputs::Base
       event.set("message", event.get("short_message").dup)
       event.remove("short_message")
     end
+    event.remove("short_message")
   end
 
   def strip_leading_underscore(event)
